@@ -4,58 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic-Quotes</title>
-<style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 100vh;
-        }
-
-        #container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            max-width: 400px;
-        }
-
-        #quotes {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        #author {
-            font-style: italic;
-            color: #777;
-        }
-
-        #bt {
-            color: #fff;
-            background-color: #007bff;
-            cursor: pointer;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        #bt:hover {
-            background-color: #0056b3;
-        }
+<link rel="stylesheet" href="styles.css">
+      
 
       
 
-</style>
+
 
 
 </head>
@@ -68,33 +22,9 @@
 </div>
 
 
-    <script>
+    <script src="app.js">
 
-         let realtimedata="";
-        const quote=document.getElementById("quotes") ;
-        const authors=document.getElementById("author"); 
-        const bt=document.getElementById("bt");
-        const getnewquotes=()=>{
-            let random=Math.floor(Math.random()*27);
-quote.innerText=`${realtimedata[random].text}`;
-authors.innerText=`${realtimedata[random].author}`;
-        };
-        
-        const getQuotes=async()=>{
-            const api="https://type.fit/api/quotes";
-            try {
-                let data=await fetch(api);
-                realtimedata= await data.json();
-getnewquotes();
-
-            } catch (error) {
-              
-            }
-        };
-
-        
-getQuotes();
-bt.addEventListener("click",getnewquotes);
+       
 
     </script>
 </body>
